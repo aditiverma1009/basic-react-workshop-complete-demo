@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import BlogCard from '../BlogCard/BlogCard';
 import blogImage from '../../assets/rectangle.png';
+import BlogCard from '../BlogCard/BlogCard';
+import Header from '../Header/Header';
 import './App.scss';
 
 class App extends Component {
@@ -8,7 +9,7 @@ class App extends Component {
     const allBlogs = [{
       title: 'Title Heading',
       desc: 'Description',
-      date: new Date('10-09-1996').toString(),
+      date: new Date('10-09-1996').getFullYear(),
       imageUrl: blogImage,
       imageAlt: 'Blog Title',
       introText: 'Blog Introduction',
@@ -16,7 +17,7 @@ class App extends Component {
     }, {
       title: 'Title Heading',
       desc: 'Description',
-      date: new Date('10-09-1990'),
+      date: new Date('10-09-1990').getFullYear(),
       imageUrl: blogImage,
       imageAlt: 'Blog Title',
       introText: 'Blog Introduction',
@@ -24,7 +25,7 @@ class App extends Component {
     }, {
       title: 'Title Heading',
       desc: 'Description',
-      date: new Date('10-09-1996').toString(),
+      date: new Date('10-09-1996').getFullYear(),
       imageUrl: blogImage,
       imageAlt: 'Blog Title',
       introText: 'Blog Introduction',
@@ -32,7 +33,7 @@ class App extends Component {
     }, {
       title: 'Title Heading',
       desc: 'Description',
-      date: new Date('10-09-1990'),
+      date: new Date('10-09-1990').getFullYear(),
       imageUrl: blogImage,
       imageAlt: 'Blog Title',
       introText: 'Blog Introduction',
@@ -42,7 +43,8 @@ class App extends Component {
     const blogList = allBlogs.map((eachBlog) => (<BlogCard details={eachBlog} />));
     return (
       <div className="app">
-        <div className="header">Blog Name</div>
+        <Header />
+        <div className="blog-name">Blog Name</div>
         <div className="body">
           <div className="bloglist">
             {blogList}

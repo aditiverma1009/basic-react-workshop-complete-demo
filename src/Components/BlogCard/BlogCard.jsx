@@ -10,7 +10,8 @@ function BlogCard({ details }) {
   return (
     <div className="blogCard">
       <div>{title}</div>
-      <div>{`${desc} ${date}`}</div>
+      <div>{`${desc}`}</div>
+      <div>{`${date}`}</div>
       <img src={imageUrl} alt={imageAlt} />
       <div>{introText}</div>
       <div>{content}</div>

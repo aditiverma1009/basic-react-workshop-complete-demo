@@ -7,6 +7,25 @@ import Footer from '../Footer/Footer';
 import './App.scss';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedPage: 'home',
+    };
+  }
+
+  handleChangeTab = (value) => {
+    if (value === 'contact') {
+      this.setState({
+        selectedPage: 'contact',
+      });
+    } else {
+      this.setState({
+        selectedPage: 'home',
+      });
+    }
+  }
+
   render() {
     const allBlogs = [{
       title: 'Title Heading',
@@ -42,11 +61,12 @@ class App extends Component {
       content: 'Content of the blog',
     }];
 
+    const { selectedPage } = this.state;
     const blogList = allBlogs.map((eachBlog) => (<BlogCard details={eachBlog} />));
     return (
       <div className="app">
-        <Header />
-        <Body blogList={blogList} blogImage={blogImage} />
+        <Header selectedPage={selectedPage} handleChangeTab={(value) => this.handleChangeTab(value)} />
+        <Body blogList={blogList} blogImage={blogImage} selectedPage={selectedPage} />
         <Footer />
       </div>
     );

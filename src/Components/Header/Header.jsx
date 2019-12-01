@@ -6,16 +6,28 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedPage: 'contact',
+      selectedPage: 'home',
     };
+  }
+
+  handleChangeTab = (value) => {
+    if (value === 'contact') {
+      this.setState({
+        selectedPage: 'contact',
+      });
+    } else {
+      this.setState({
+        selectedPage: 'home',
+      });
+    }
   }
 
   render() {
     const { selectedPage } = this.state;
     return (
       <div className="header">
-        <div className={selectedPage === 'home' ? 'selected' : ''}>Home</div>
-        <div className={selectedPage === 'contact' ? 'selected' : ''}>Contact</div>
+        <input type="button" className={selectedPage === 'home' ? 'selected' : ''} value="Home" onClick={() => this.handleChangeTab('home')} />
+        <input type="button" className={selectedPage === 'contact' ? 'selected' : ''} value="Contact" onClick={() => this.handleChangeTab('contact')} />
       </div>
     );
   }

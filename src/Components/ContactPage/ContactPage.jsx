@@ -4,7 +4,7 @@ import './ContactPage.scss';
 
 function ContactPage() {
   return (
-    <>
+    <div className="contact-page">
       <div className="blog-name">Blog Name</div>
       <div className="contact-info">
         <p> Name: Blogger </p>
@@ -29,7 +29,7 @@ function ContactPage() {
           </a>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

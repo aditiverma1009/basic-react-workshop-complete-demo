@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+
 import './Header.scss';
 
-function Header(props) {
-  const { selectedPage, handleChangeTab } = props;
+function Header() {
   return (
     <div className="header">
-      <input type="button" className={selectedPage === 'home' ? 'selected' : ''} value="Home" onClick={() => handleChangeTab('home')} />
-      <input type="button" className={selectedPage === 'contact' ? 'selected' : ''} value="Contact" onClick={() => handleChangeTab('contact')} />
+      <NavLink exact to="/" className="link-tab" activeClassName="selected">Home</NavLink>
+      <NavLink to="/contact" className="link-tab" activeClassName="selected">Contact</NavLink>
+      {/* <input type="button" className={selectedPage === 'contact' ? 'selected' : ''} value="Contact" onClick={() => handleChangeTab('contact')} /> */}
     </div>
   );
 }

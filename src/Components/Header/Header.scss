@@ -5,7 +5,7 @@
     flex: 1;
     display: flex;
     flex-direction: row;
-    input {
+    .link-tab {
         font-size: 20px;
         color: white;
         border: none;
@@ -13,6 +13,7 @@
         padding: 25px;
         outline: none;
         cursor: pointer;
+        text-decoration: none;
     }
     .selected {
         background-color: black;

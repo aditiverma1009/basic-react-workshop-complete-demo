@@ -11,7 +11,4 @@ function NotFound() {
   );
 }
 
-NotFound.protoTypes = {
-};
-
 export default NotFound;

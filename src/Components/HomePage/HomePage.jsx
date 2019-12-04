@@ -1,4 +1,5 @@
 import React from 'react';
+import Proptypes from 'prop-types';
 import './HomePage.scss';
 
 function HomePage(props) {
@@ -45,7 +46,9 @@ function HomePage(props) {
   );
 }
 
-HomePage.protoTypes = {
+HomePage.propTypes = {
+  blogList: Proptypes.arrayOf.isRequired,
+  blogImage: Proptypes.string.isRequired,
 };
 
 export default HomePage;

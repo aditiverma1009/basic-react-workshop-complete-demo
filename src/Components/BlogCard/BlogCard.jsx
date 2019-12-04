@@ -19,8 +19,28 @@ function BlogCard({ details }) {
   );
 }
 
-BlogCard.protoTypes = {
-  details: PropTypes.any.isRequired,
+BlogCard.propTypes = {
+  details: PropTypes.shape({
+    title: PropTypes.string,
+    desc: PropTypes.string,
+    date: PropTypes.string,
+    imageAlt: PropTypes.string,
+    imageUrl: PropTypes.string,
+    introText: PropTypes.string,
+    content: PropTypes.string,
+  }),
+};
+
+BlogCard.defaultProps = {
+  details: PropTypes.shape({
+    title: '',
+    desc: '',
+    date: '',
+    imageAlt: '',
+    imageUrl: '',
+    introText: '',
+    content: '',
+  }),
 };
 
 export default BlogCard;

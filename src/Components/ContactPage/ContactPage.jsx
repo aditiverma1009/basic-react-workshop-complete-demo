@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './ContactPage.scss';
 
 function ContactPage() {
@@ -32,9 +31,5 @@ function ContactPage() {
     </div>
   );
 }
-
-ContactPage.protoTypes = {
-  details: PropTypes.any.isRequired,
-};
 
 export default ContactPage;

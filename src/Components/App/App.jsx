@@ -12,6 +12,35 @@ class App extends Component {
     };
   }
 
+  componentWillMount = () => { // deprecated
+    console.log('component will mount');
+  };
+
+  componentDidMount = () => {
+    console.log('component did mount');
+  };
+
+  componentWillReceiveProps=() => { // deprecated
+    console.log('component will receive props');
+  }
+
+  shouldComponentUpdate=(nextProps, nextStates) => {
+    console.log('should Component Update');
+    return true;
+  }
+
+  componentWillUpdate=() => { // deprecated
+    console.log('component will update');
+  }
+
+  componentDidUpdate=(prevProps, prevState) => {
+    console.log('component did update', prevProps, prevState, this.state);
+  }
+
+  componentWillUnmount=() => {
+    console.log('component will unmount');
+  }
+
   onFormSubmit = (event, content) => {
     const { title, desc, imageurl } = content;
     const { allBlogs } = this.state;

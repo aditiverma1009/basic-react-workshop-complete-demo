@@ -22,7 +22,6 @@ class ContactPage extends React.Component {
     });
   }
 
-
   render() {
     const { details, loader } = this.state;
     if (loader === true) {

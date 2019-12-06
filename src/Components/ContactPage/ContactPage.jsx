@@ -33,6 +33,9 @@ class ContactPage extends React.Component {
         </a>
       </div>
     ));
+    if (details === undefined || details === null) {
+      return (<div>Loading..</div>);
+    }
     return (
       <div className="contact-page">
         <div className="blog-name">

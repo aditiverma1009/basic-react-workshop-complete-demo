@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './BlogCard.scss';
 
-function BlogCard({ details }) {
+function BlogCard(props) {
+  const { details, id, deleteBlog } = props;
   const {
     title, imageAlt,
     imageUrl, content,
@@ -12,6 +13,7 @@ function BlogCard({ details }) {
       <div>{title}</div>
       <img src={imageUrl} alt={imageAlt} />
       <div>{content}</div>
+      <input type="button" onClick={() => deleteBlog(id)} value="Delete" />
     </div>
   );
 }

@@ -82,9 +82,18 @@ class HomePage extends Component {
 }
 
 HomePage.propTypes = {
-  blogList: Proptypes.arrayOf.isRequired,
+  blogList: Proptypes.arrayOf(Proptypes.shape({
+    title: Proptypes.string,
+    imageUrl: Proptypes.string,
+    imageAlt: Proptypes.string,
+    content: Proptypes.string,
+  })),
   blogImage: Proptypes.string.isRequired,
   onFormSubmit: Proptypes.func.isRequired,
+};
+
+HomePage.defaultProps = {
+  blogList: [],
 };
 
 export default HomePage;

@@ -25,6 +25,8 @@ BlogCard.propTypes = {
     imageUrl: PropTypes.string,
     content: PropTypes.string,
   }),
+  id: PropTypes.number.isRequired,
+  deleteBlog: PropTypes.func.isRequired,
 };
 
 BlogCard.defaultProps = {

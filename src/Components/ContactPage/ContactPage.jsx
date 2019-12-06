@@ -1,10 +1,12 @@
 import React from 'react';
+import Loader from 'react-loader-spinner';
 import './ContactPage.scss';
 
 class ContactPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loader: true,
       details: {
         socialMediaProfiles: [],
       },
@@ -15,13 +17,28 @@ class ContactPage extends React.Component {
     const response = await fetch('https://api.myjson.com/bins/1463g4');
     const res = await response.json();
     this.setState({
+      loader: false,
       details: res.response.data,
     });
   }
 
 
   render() {
-    const { details } = this.state;
+    const { details, loader } = this.state;
+    if (loader === true) {
+      return (
+        <div className="loader-container">
+          <Loader
+            className="loader"
+            type="Puff"
+            color="#00BFFF"
+            height={100}
+            width={100}
+            timeout={3000}
+          />
+        </div>
+      );
+    }
     const socialMediaList = details.socialMediaProfiles.map((eachPlatform) => (
       <div className="platform">
         <a href={eachPlatform.link}>
@@ -33,9 +50,6 @@ class ContactPage extends React.Component {
         </a>
       </div>
     ));
-    if (details === undefined || details === null) {
-      return (<div>Loading..</div>);
-    }
     return (
       <div className="contact-page">
         <div className="blog-name">

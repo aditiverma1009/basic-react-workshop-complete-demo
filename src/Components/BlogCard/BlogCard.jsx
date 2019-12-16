@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import defaultBlogImage from '../../assets/rectangle.png';
 import './BlogCard.scss';
 
 function BlogCard(props) {
@@ -8,10 +9,11 @@ function BlogCard(props) {
     title, imageAlt,
     imageUrl, content,
   } = details;
+  console.log('hi', defaultBlogImage);
   return (
     <div className="blogCard">
       <div>{title}</div>
-      <img src={imageUrl} alt={imageAlt} />
+      <img src={imageUrl || defaultBlogImage} alt={imageAlt} />
       <div>{content}</div>
       <input type="button" onClick={() => deleteBlog(id)} value="Delete" />
     </div>
@@ -30,12 +32,12 @@ BlogCard.propTypes = {
 };
 
 BlogCard.defaultProps = {
-  details: PropTypes.shape({
+  details: {
     title: '',
     imageAlt: '',
     imageUrl: '',
     content: '',
-  }),
+  },
 };
 
 export default BlogCard;
